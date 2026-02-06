@@ -18645,12 +18645,13 @@ with self;
 
   libwwwperl = buildPerlPackage {
     pname = "libwww-perl";
-    version = "6.72";
+    version = "6.81";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/O/OA/OALDERS/libwww-perl-6.72.tar.gz";
-      hash = "sha256-6bg1T9XiC+IHr+I93VhPzVm/gpmNwHfez2hLodrloF0=";
+      url = "mirror://cpan/authors/id/O/OA/OALDERS/libwww-perl-6.81.tar.gz";
+      hash = "sha256-qzBVLxlOi1rjrAiFEy/R1OoExMf+ZVV2W5jwGvcMFzY=";
     };
     buildInputs = [
+      HTTPCookieJar
       HTTPDaemon
       TestFatal
       TestNeeds
@@ -18660,7 +18661,6 @@ with self;
       EncodeLocale
       FileListing
       HTMLParser
-      HTTPCookieJar
       HTTPCookies
       HTTPDate
       HTTPMessage
@@ -19902,16 +19902,15 @@ with self;
 
   LWP = buildPerlPackage {
     pname = "libwww-perl";
-    version = "6.72";
+    version = "6.81";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/O/OA/OALDERS/libwww-perl-6.72.tar.gz";
-      hash = "sha256-6bg1T9XiC+IHr+I93VhPzVm/gpmNwHfez2hLodrloF0=";
+      url = "mirror://cpan/authors/id/O/OA/OALDERS/libwww-perl-6.81.tar.gz";
+      hash = "sha256-qzBVLxlOi1rjrAiFEy/R1OoExMf+ZVV2W5jwGvcMFzY=";
     };
     propagatedBuildInputs = [
       FileListing
       HTMLParser
       HTTPCookies
-      HTTPCookieJar
       HTTPNegotiate
       NetHTTP
       TryTiny
@@ -19926,6 +19925,7 @@ with self;
     '';
     doCheck = !stdenv.hostPlatform.isDarwin;
     nativeCheckInputs = [
+      HTTPCookieJar
       HTTPDaemon
       TestFatal
       TestNeeds
