@@ -2305,6 +2305,27 @@ with self;
     };
   };
 
+  Badger = buildPerlPackage {
+    pname = "Badger";
+    version = "0.16";
+    src = fetchurl {
+      url = "mirror://cpan/authors/id/A/AB/ABW/Badger-0.16.tar.gz";
+      hash = "sha256-tL6Z4I3evcvalYONiqGvEgrB7OB71dszM1+7PzLDqqc=";
+    };
+    buildInputs = [
+      YAML
+    ];
+    testPhase = ''
+      mount
+      ls -lha
+      exit 1
+    '';
+    meta = {
+      description = "Application programming toolkit";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   BarcodeZBar = buildPerlPackage {
     pname = "Barcode-ZBar";
     version = "0.04pre";
@@ -7819,6 +7840,20 @@ with self;
         artistic1
         gpl1Plus
       ];
+    };
+  };
+
+  CSSInliner = buildPerlPackage {
+    pname = "CSS-Inliner";
+    version = "4027";
+    src = fetchurl {
+      url = "mirror://cpan/authors/id/K/KA/KAMELKEV/CSS-Inliner-4027.tar.gz";
+      hash = "sha256-Gg8EvQmdctFcI0PTRcSsF/b7B7gPCeLckGtMIv4jKYo=";
+    };
+    propagatedBuildInputs = [ HTMLQuery HTMLTree LWP URI ];
+    meta = {
+      description = "Library for converting CSS <style> blocks to inline styles";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
     };
   };
 
@@ -15677,6 +15712,20 @@ with self;
     };
   };
 
+  HashMergeExtra = buildPerlPackage {
+    pname = "Hash-Merge-Extra";
+    version = "0.06";
+    src = fetchurl {
+      url = "mirror://cpan/authors/id/M/MI/MIXAS/Hash-Merge-Extra-0.06.tar.gz";
+      hash = "sha256-5q8ro1eubr1T2BBHeAClyN8ZJD8y/ZSs3OkBM43KtFE=";
+    };
+    propagatedBuildInputs = [ HashMerge ];
+    meta = {
+      description = "Collection of extra behaviors for L<Hash::Merge>";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
+    };
+  };
+
   HashMergeSimple = buildPerlPackage {
     pname = "Hash-Merge-Simple";
     version = "0.051";
@@ -16235,6 +16284,20 @@ with self;
         artistic1
         gpl1Plus
       ];
+    };
+  };
+
+  HTMLQuery = buildPerlPackage {
+    pname = "HTML-Query";
+    version = "0.09";
+    src = fetchurl {
+      url = "mirror://cpan/authors/id/K/KA/KAMELKEV/HTML-Query-0.09.tar.gz";
+      hash = "sha256-HZocn4rE8YmmOi3JWDg7Y0kf2/Ap7gZYoJtVqu+vMIk=";
+    };
+    propagatedBuildInputs = [ Badger HTMLTree ];
+    meta = {
+      description = "Perform jQuery-like queries on HTML::Element trees";
+      license = with lib.licenses; [ artistic1 gpl1Plus ];
     };
   };
 
